@@ -7,10 +7,12 @@ import {Producto} from 'src/app/componet.module';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tienda Virtual';
-  nombre = "Diego";
-  edad = 30;
-  img = "https://source.unsplash.com/random";
+  title = 'Carrito de Compras';
+  nombre = "Rommel";
+  edad = 2;
+  img = "https://cdn-icons-png.flaticon.com/512/6325/6325028.png";
+  img2 = "https://w7.pngwing.com/pngs/412/804/png-transparent-computer-icons-font-awesome-icon-design-minus-symbol-logo-area-user-interface.png"
+  img3 = "https://pbs.twimg.com/media/EQmptdJWkAEtx1m.jpg"
   habilitado = false;
   ejemplo = "";
 
@@ -20,62 +22,29 @@ export class AppComponent {
       price: 40,
       image: "./assets/imagen/producto1.png",
       comentario: "Producto en Descuento hasta fin de mes"
+      
     },
-    {
-      name: "Aceite T2",
-      price: 42,
-      image: "./assets/imagen/producto2.webp",
-    },
-    {
-      name: "Aceite T3",
-      price: 43,
-      image: "./assets/imagen/producto3.webp",
-    },
-    {
-      name: "Bateria 1",
-      price: 200,
-      image: "./assets/imagen/producto4.jpg",
-    },
-    {
-      name: "Bateria 2",
-      price: 220,
-      image: "./assets/imagen/producto5.jpg",
-    },
-    {
-      name: "Bateria 3",
-      price: 250,
-      image: "./assets/imagen/producto6.jpg",
-    },
-    {
-      name: "Neumaticos e1",
-      price: 400,
-      image: "./assets/imagen/producto7.jpg",
-    },
-    {
-      name: "Neumaticos e2",
-      price: 450,
-      image: "./assets/imagen/producto8.jpg",
-    },
-    {
-      name: "Neumaticos e3",
-      price: 500,
-      image: "./assets/imagen/producto9.jpg",
-    },
+  
   ]
 
 
+
+  
+
   newName = "";
+  newName1 = "";
+  newName2 = "";
+  newName3 = "";
   chocolates :string[] = [
-    "Pakari",
-    "Nestle",
-    "Republica del Cacao",
-    "Nicolo",
-    "Manicho"
+    ""
   ]
 
   person = {
-    name : "Alexander",
-    age : 30,
+    name : "Esteban",
+    calle: "la magdalena",
+    cedula: 1726725631,
+    telefono: 984672376,
+    age : 1,
     avatar : 'https://img.freepik.com/vector-gratis/hombre-muestra-gesto-gran-idea_10045-637.jpg?w=2000'
   }
 
@@ -96,9 +65,17 @@ export class AppComponent {
 
   agregarChololate(){
     this.chocolates.push(this.newName);
-    this.newName = "";
+    
+    this.chocolates.push(this.newName1);
+    
+    this.chocolates.push(this.newName2);
+    
+    this.chocolates.push(this.newName3);
+ 
+
   }
 
+  
   borrarChocolate(index:number){
     this.chocolates.splice(index, 1);
   }

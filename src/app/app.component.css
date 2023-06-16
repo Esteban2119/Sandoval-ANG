@@ -1,14 +1,30 @@
+#todo{
+  background-color: bisque;
+  margin: 0;
+  padding: 0;
+}
+
 .box {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 100%;
   overflow: auto;
-  background: rgb(82, 4, 4);
+  background: rgb(214, 117, 117);
   color: aliceblue;
 }
 
 #titutlo{
-  color: rgb(2, 2, 86);
+  color: red;
   text-decoration: underline;
   font-weight: 1200;
+  text-align: center;
 }
 
+.modas{
+  text-align: center;
+  color: blue;
+}
+
+.modas1{
+  text-align: center;
+  border-bottom: 20px;
+}

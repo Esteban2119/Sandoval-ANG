@@ -1,107 +1,163 @@
-<h1 id="titutlo">ESTRUCTURAS DE CONTROL</h1>
-<hr>
-<h2>ngSwitch</h2>
-<input type="text" required #inputName="ngModel" [(ngModel)]="person.name" >
-<div [ngSwitch]="person.name">
-<p *ngSwitchCase="'Lucas'"> Buenos dias Lucas, que tengas un buen dia</p>
-<p *ngSwitchCase="'Juan'"> Buenos dias Juan, que tengas un buen dia</p>
-<p *ngSwitchCase="'Pedro'"> Buenos dias Pedro, que tengas un buen dia</p>
-<p *ngSwitchCase="'Diego'"> Buenos dias Diego, que tengas un buen dia</p>
-<p *ngSwitchCase="'Carla'"> Buenos dias Carla, que tengas un buen dia</p>
-<p *ngSwitchCase="'Esteba'"> Buenos dias Esteban, que tengas un buen dia</p>
-<p *ngSwitchDefault> Excelente Dia</p>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>TiendaVirtual</title>
+</head>
+<body id="todo">
+<div class="titulo1"> 
+  <h1 id="titutlo">{{title}}</h1>
 </div>
-
 <hr>
-<h2>*ngFor Aplicado a Objetos</h2>
-
-<div>
-  <div *ngFor="let producto of products">
-    <p>{{producto.name}}</p>
-    <p>{{producto.price}}</p>
-    <img height="200" width="200" src="{{producto.image}}" alt="">
-    <p>Comentario: {{producto.comentario}}</p>
+<br>
+<div class="container">
+  <div class="modas">
+    <h2>MODAS-CONCHITA</h2>
+  </div>
+  <div class="modas1">
+    <button [disabled]= "habilitado">HOME</button>
+    <button [disabled]= "habilitado">RECURSOS</button>
+    <button [disabled]= "habilitado">CONTACTOS</button>
+    <button [disabled]= "habilitado">FOTOS</button>
   </div>
 </div>
 
 <hr>
-<h2>*ngFor</h2>
-<input type="text" [(ngModel)]="newName">
-<button (click)="agregarChololate()">Agregar Chocolate</button>
-<ul>
-  <li *ngIf="chocolates.length == 0">No hay elementos</li>
-  <li *ngFor="let item of chocolates; index as i">
-      {{i}}.- {{item}}
-      <button (click)="borrarChocolate(i)">Delete</button>
-  </li>
-</ul>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre Cliente</th>
+      <th scope="col">Calle</th>
+      <th scope="col">Cedula</th>
+      <th scope="col">telefono</th> 
+    </tr>
+  </thead> 
 
-<hr>
-<h2>*ngIf</h2>
-<input type="number" required max="50" min="10" #inputAge="ngModel" [(ngModel)]="person.age">
-<input type="text" required #inputName="ngModel" [(ngModel)]="person.name" >
-<p *ngIf="person.name === 'Carlos'">Bienvenido Carlos, que tengas un exclente dia</p>
-<p *ngIf="person.name === 'Danna'">Bienvenida Danna, que tengas un exclente dia</p>
-<p *ngIf="person.name === 'Kevin' && person.age == 18; else myElse">Bienvenido Kevin, que tengas un exclente dia</p>
 
-<ng-template #myElse>
-<p>Buenos dias</p>
-</ng-template>
+  <tbody>
+    <ng-container *ngFor="let producto of products">
+      <td><input type="text" [(ngModel)]="newName" >
+      </td>
+      <td><input type="text" [(ngModel)]="newName1"></td>
+      <td><input type="text"[(ngModel)]="newName2"></td>
+      <td><input type="text" [(ngModel)]="newName3"></td>
+    </ng-container>
+</table>
 
-<h1 id="titutlo">COMUNICACION DE DATOS</h1>
-<hr>
-<h1>NGMODEL </h1>
-<p>Nombre : {{nombre}}</p>
-<input type="text" required #inputName="ngModel" [(ngModel)]="nombre" >
-<p>Valid: {{inputName.valid}}</p>
-
-<p>Age: {{edad}}</p>
-<input type="number" required max="50" min="10" #inputAge="ngModel" [(ngModel)]="edad">
-<p>Valid: {{inputAge.valid}}</p>
+<br>
+<br>
+<br>
 <hr>
 
-<h1>Event Binding </h1>
-<h3>El texto introducido es: {{person.name}}</h3>
-<input type="text" [value]="person.name" (keyup)="changeName($event)" >
-
-<p>Edad: {{person.age}}</p>
-<button (click)="increaseAge()">Aumentar</button>
-
+<br>
+<br>
+<br>
 <div class="box" (scroll)="onScroll($event)">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ipsam obcaecati molestiae totam aliquam sed aspernatur
-    velit culpa explicabo deserunt incidunt consequatur dolorum ipsum harum distinctio illo non. Placeat, animi.
-  </p>
+<table class="table table-success table-striped">
+<thead>
+  <tr>
+    <th scope="col">Nombre</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Imagen</th>
+    <th scope="col">Comentario</th>
+    <th scope="col">Cantidad</th>
+    <th scope="col">Agregar</th>
+  </tr>
+</thead> 
+
+<tbody>
+  <ng-container *ngFor="let producto of products">
+    <td>{{producto.name}}</td>
+    <td>{{producto.price}}</td>
+    <td><img height="100" width="100" src="{{img3}}" alt="">
+    </td>
+    <td>{{producto.comentario}}</td>
+    <td><button [disabled]= "habilitado" (click)="increaseAge()"><img height="20" width="20" src="{{img2}}" alt="Image"></button>
+      <input type="number" required max="5" min="1" #inputAge="ngModel" [(ngModel)]="edad">
+      <button [disabled]= "habilitado" (click)="increaseAge()"><img height="10" width="10" src="{{img}}" alt="Image"></button>
+    </td>
+    <button (click)="agregarChololate()">Agregar Chocolate</button>
+
+    <td>
+
+    </td>
+ </ng-container>
+</tbody>
+<tbody>
+  <ng-container *ngFor="let producto of products">
+    <td>{{producto.name}}</td>
+    <td>{{producto.price}}</td>
+    <td><img height="100" width="100" src="{{producto.image}}" alt="">
+    </td>
+    <td>{{producto.comentario}}</td>
+    <td><button [disabled]= "habilitado" (click)="increaseAge()"><img height="20" width="20" src="{{img2}}" alt="Image"></button>
+      <input type="number" required max="5" min="1" #inputAge="ngModel" [(ngModel)]="edad">
+      <button [disabled]= "habilitado" (click)="increaseAge()"><img height="10" width="10" src="{{img}}" alt="Image"></button>
+    </td>
+ </ng-container>
+</tbody>
+</table>
 </div>
 
+<br>
+<br>
+<br>
 <hr>
-<h1>Property Binding </h1>
-<button [disabled]= "habilitado">Enviar</button>
-<input type="text" [value]="title" [disabled]="habilitado">
-<input type="text" [value]="person.name" />
-<progress max="80" [value]="person.age"></progress>
-<img width="100" [src]="person.avatar" alt="Imagen"/>
+
+<br>
+<br>
+<br>
+<div>
+  <h1>FACTURA DE COMPRAS </h1>
+</div>
+
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre Cliente</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th> 
+      <th scope="col">Editar</th>
+    </tr>
+  </thead> 
+
+  <tbody>
+    <ng-container *ngFor="let producto of products">
+      <td>{{person.name}}</td>
+      <td>{{producto.name}}</td>
+      <td>{{producto.price}}</td>
+      <td><input type="number" required max="5" min="1" #inputAge="ngModel" [(ngModel)]="edad"></td>
+      <td><button (click)="borrarChocolate">Delete</button>
+      </td>
+    </ng-container>
+</table>
+
+
+
+<br>
+<br>
+<br>
 
 <hr>
-<h1>String Interpolation</h1>
-<h1>Hola mundo</h1>
-<h2>3 +3 = {{3+3}}</h2>
-<p>El titutlo del presente proyecto es: {{title}}</p>
-<p>Nombre : {{nombre}}</p>
-<p>Edad: {{edad}}</p>
-<img src="{{img}}" alt="Image">
+
+<br>
+<br>
+<br>
+<h2>Actualizar</h2>
+
+<div>
+  <table class="table table-striped">
+    <thead>
+    </thead>
+    <tbody>
+        <td *ngFor="let item of chocolates; index as i">
+          {{i}}.- {{item}}</td>
+        <td>{{person.age}}</td>
+    </tbody>
+  </table> 
+</div>
+</body>
+</html>
